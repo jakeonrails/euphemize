@@ -3,6 +3,20 @@ Feature: Authentication
   As a user
   I want my account to be password protected
 
+  Scenario: Unauthenticated user can see a link to login
+    Given I am not logged in
+    When I go to the home page
+    Then I should see "Login"
+    And I should not see "Logout"
+    And I should see "Sign Up"
+
+  Scenario: Authenticated user cannot see a link to login
+    Given I am logged in
+    When I go to the home page
+    Then I should not see "Login"
+    And I should see "Logout"
+    And I should not see "Sign Up"
+
   Scenario: User creates an account
   	Given there are no users
   	When I go to the sign up page

@@ -35,3 +35,4 @@ gem "capybara", :group => :test
 gem "devise"
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
+gem 'factory_girl_rails', "1.1.beta1", :group => :test
