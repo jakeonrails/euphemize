@@ -1,4 +1,6 @@
 Euphemize::Application.routes.draw do
+
+
   devise_for :users
 
   # The priority is based upon order of creation:
@@ -40,7 +42,12 @@ Euphemize::Application.routes.draw do
   #       get 'recent', :on => :collection
   #     end
   #   end
+  resources :users do
+    resources :phrases
+  end
 
+  resources :phrases
+  
   # Sample resource route within a namespace:
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
@@ -50,7 +57,7 @@ Euphemize::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "phrases#index"
 
   # See how all your routes lay out with "rake routes"
 
