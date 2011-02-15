@@ -6,15 +6,15 @@ Feature: Authentication
   Scenario: Unauthenticated user can see a link to login
     Given I am not logged in
     When I go to the home page
-    Then I should see "Login"
-    And I should not see "Logout"
+    Then I should see "Sign In"
+    And I should not see "Sign Out"
     And I should see "Sign Up"
 
   Scenario: Authenticated user cannot see a link to login
     Given I am logged in
     When I go to the home page
-    Then I should not see "Login"
-    And I should see "Logout"
+    Then I should not see "Sign In"
+    And I should see "Sign Out"
     And I should not see "Sign Up"
 
   Scenario: User creates an account
