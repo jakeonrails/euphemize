@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title
+      Euphemize.me
+    = stylesheet_link_tag :all
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+  %body
+    #header
+      %h1
+        Euphemize.me
+    #content
+      = render "layouts/session"
+      = render "layouts/notices"
+      = yield
+

@@ -1,0 +1,15 @@
+%div#session_menu
+  %ul#session_items
+    - if user_signed_in?
+      %li.session_item
+        Logged in as
+        = current_user.email
+      %li.session_item
+        Not you?
+        = link_to "Sign Out", destroy_user_session_path
+    - else
+      %li.session_item
+        = link_to "Sign In", new_user_session_path
+      %li.session_item
+        = link_to "Sign Up", new_user_registration_path
+

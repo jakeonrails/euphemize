@@ -11,4 +11,3 @@ Feature: Working with phrases
     Then I should see "Share"
     And I should see "kicked the bucket"
 
-

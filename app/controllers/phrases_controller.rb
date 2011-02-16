@@ -4,7 +4,10 @@ class PhrasesController < ApplicationController
   def index
     if (params[:user_id])
       @user = User.find(params[:user_id])
-      redirect_to(new_phrase_url, :notice => "Create your first phrase!") unless @user.phrases.any?
+      unless @user.phrases.any?
+        redirect_to(new_phrase_url, :notice => "Create your first phrase!")
+        return
+      end
       @phrases = @user.phrases.all
     else
       @phrases = Phrase.all
@@ -92,3 +95,4 @@ class PhrasesController < ApplicationController
     end
   end
 end
+
